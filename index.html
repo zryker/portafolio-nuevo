@@ -20,78 +20,73 @@
             flex-direction: column;
         }
 
-        /* Encabezado Principal */
-        header {
-            text-align: center;
-            padding: 35px 20px 20px 20px;
-            background: rgba(2, 6, 13, 0.9);
-            border-bottom: 2px solid #0055ff;
-            box-shadow: 0 4px 20px rgba(0, 85, 255, 0.25);
-        }
-
-        h1 {
-            color: #0077ff;
-            font-size: 2.2rem;
-            margin-bottom: 8px;
-            text-shadow: 0 0 12px rgba(0, 119, 255, 0.6);
-        }
-
-        .subtitle {
-            color: #79a6e8;
-            font-size: 1.05rem;
-            font-weight: 500;
-        }
-
-        /* Menú de Navegación */
+        /* Menú de Navegación estilo texto simple */
         nav {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 10px;
-            padding: 15px;
-            background: rgba(7, 16, 31, 0.95);
+            gap: 20px;
+            padding: 20px 25px;
+            background: rgba(2, 6, 13, 0.95);
             position: sticky;
             top: 0;
             z-index: 100;
             backdrop-filter: blur(5px);
-            border-bottom: 1px solid #13243d;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-brand {
+            font-weight: 800;
+            font-size: 1rem;
+            color: #79a6e8;
+            letter-spacing: 1px;
+            margin-right: 10px;
+            text-transform: uppercase;
         }
 
         nav button {
-            background: #0a1628;
+            background: transparent;
             color: #8daecf;
-            border: 1px solid #1c3d6e;
-            padding: 10px 18px;
-            border-radius: 8px;
+            border: none;
+            padding: 4px 0;
             cursor: pointer;
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            position: relative;
         }
 
         nav button:hover, nav button.active {
-            background: #0055ff;
             color: #ffffff;
-            border-color: #0077ff;
-            box-shadow: 0 0 14px rgba(0, 119, 255, 0.5);
+        }
+
+        nav button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #0077ff;
+            border-radius: 2px;
         }
 
         /* Contenedor de Contenido */
         main {
             max-width: 800px;
             width: 90%;
-            margin: 30px auto;
+            margin: 20px auto 30px auto;
             flex: 1;
         }
 
-        /* Secciones */
+        /* Secciones sin cuadros de fondo */
         .tab-content {
             display: none;
-            background: rgba(9, 20, 38, 0.85);
-            border: 1px solid #193358;
-            border-radius: 12px;
-            padding: 28px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            background: transparent;
+            border: none;
+            padding: 10px 0;
+            box-shadow: none;
             animation: fadeIn 0.4s ease-in-out;
         }
 
@@ -107,8 +102,8 @@
         /* Estilos de Textos y Títulos */
         h2 {
             color: #0077ff;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
             border-bottom: 2px solid #0055ff;
             padding-bottom: 8px;
             text-shadow: 0 0 10px rgba(0, 119, 255, 0.4);
@@ -118,7 +113,112 @@
             line-height: 1.7;
             margin-bottom: 15px;
             color: #c0d1e3;
-            font-size: 1.05rem;
+            font-size: 1rem;
+        }
+
+        /* Contenedor completo con raya azul para todo el texto */
+        .highlight-block {
+            border-left: 4px solid #0077ff;
+            padding-left: 16px;
+            background: rgba(13, 29, 54, 0.25);
+            border-radius: 0 10px 10px 0;
+            padding-top: 12px;
+            padding-bottom: 4px;
+            margin-bottom: 20px;
+        }
+
+        /* Bloque Estilo Hero Banner */
+        .hero-banner {
+            text-align: left;
+            padding: 10px 0 5px 0;
+        }
+
+        .hero-status {
+            font-size: 0.8rem;
+            color: #79a6e8;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+        }
+
+        .hero-status .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #38ef7d;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #38ef7d;
+        }
+
+        .hero-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 14px;
+            border-bottom: none;
+            padding-bottom: 0;
+            text-shadow: none;
+        }
+
+        .hero-title span {
+            color: #0077ff;
+            text-shadow: 0 0 12px rgba(0, 119, 255, 0.6);
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: #c0d1e3;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 0 0 20px 0;
+        }
+
+        /* Botones de Acción (Ver experiencia y Contactarme) */
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .btn-action-primary {
+            background: #0077ff;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(0, 119, 255, 0.4);
+        }
+
+        .btn-action-primary:hover {
+            background: #0055ff;
+            transform: translateY(-1px);
+        }
+
+        .btn-action-secondary {
+            background: rgba(10, 22, 40, 0.8);
+            color: #ffffff;
+            border: 1px solid #1c3d6e;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-action-secondary:hover {
+            border-color: #0077ff;
+            background: rgba(13, 29, 54, 0.9);
+            transform: translateY(-1px);
         }
 
         /* Tarjeta de Perfil tipo Minecraft */
@@ -126,17 +226,18 @@
             background: rgba(6, 15, 28, 0.95);
             border: 1px solid #162c4a;
             border-radius: 16px;
-            padding: 25px 20px;
+            padding: 20px 15px;
             text-align: center;
-            margin-bottom: 25px;
+            margin: 25px auto;
+            max-width: 400px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
         }
 
         .profile-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 20px;
-            margin: 0 auto 15px auto;
+            width: 90px;
+            height: 90px;
+            border-radius: 18px;
+            margin: 0 auto 12px auto;
             border: 2px solid #0077ff;
             box-shadow: 0 0 15px rgba(0, 119, 255, 0.3);
             display: block;
@@ -144,7 +245,7 @@
         }
 
         .profile-username {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: #ffffff;
             margin-bottom: 4px;
@@ -152,24 +253,59 @@
 
         .profile-role {
             color: #79a6e8;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
         }
 
         .profile-tags {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .tag {
             background: rgba(13, 29, 54, 0.8);
             border: 1px solid #1c3d6e;
             color: #a0aec0;
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 20px;
-            font-size: 0.88rem;
+            font-size: 0.82rem;
+        }
+
+        /* Sección de Estadísticas sin cuadro */
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 10px 5px;
+            margin: 15px 0 25px 0;
+            background: transparent;
+            border: none;
+            text-align: center;
+            box-shadow: none;
+        }
+
+        .stat-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-number {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 3px;
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            color: #79a6e8;
+            line-height: 1.25;
+            word-break: break-word;
         }
 
         ul {
@@ -191,19 +327,17 @@
             margin-bottom: 4px;
         }
 
-        /* Tarjetas de Servidores */
+        /* Tarjetas de Servidores con Rango en línea inferior */
         .server-card {
             background: rgba(13, 29, 54, 0.7);
             border: 1px solid #1c3e6e;
-            padding: 18px;
+            padding: 16px 18px;
             border-radius: 10px;
             margin-bottom: 15px;
-        }
-
-        .server-header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
         }
 
         .server-name {
@@ -219,6 +353,7 @@
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: bold;
+            display: inline-block;
         }
 
         /* Botón de Copiar Discord */
@@ -268,27 +403,54 @@
 </head>
 <body>
 
-    <!-- Encabezado -->
-    <header>
-        <h1>Soy zRyker</h1>
-        <div class="subtitle">Developer, Staff de Minecraft y Discord</div>
-    </header>
-
-    <!-- Menú de opciones -->
+    <!-- Menú de opciones (Texto limpio arriba) -->
     <nav>
-        <button class="active" onclick="showTab('inicio', this)">Inicio</button>
-        <button onclick="showTab('sobre-mi', this)">Sobre mí</button>
-        <button onclick="showTab('servidores', this)">Servidores</button>
-        <button onclick="showTab('habilidades', this)">Habilidades</button>
-        <button onclick="showTab('contacto', this)">Contacto</button>
+        <span class="nav-brand">zRyker</span>
+        <button class="active" id="nav-inicio" onclick="showTab('inicio', this)">Sobre mí</button>
+        <button id="nav-servidores" onclick="showTab('servidores', this)">Experiencia</button>
+        <button id="nav-habilidades" onclick="showTab('habilidades', this)">Habilidades</button>
+        <button id="nav-contacto" onclick="showTab('contacto', this)">Contacto</button>
     </nav>
 
     <!-- Contenido Principal -->
     <main>
 
-        <!-- Opción: INICIO -->
+        <!-- Opción: INICIO / SOBRE MÍ -->
         <section id="inicio" class="tab-content active">
-            <!-- Tarjeta de Perfil Minecraft -->
+            <!-- Presentación Estilo Banner -->
+            <div class="hero-banner">
+                <div class="hero-status">
+                    <span class="dot"></span> HEAD MANAGER • DEVELOPER
+                </div>
+                <h2 class="hero-title">Hola, soy <span>zRyker</span></h2>
+                <p class="hero-desc">
+                    Me especializo en organizar el equipo de staff, mejorar la experiencia de las comunidades y mantener servidores de minecraft activos, ordenados y con buena atención.
+                </p>
+
+                <!-- Botones de Acción -->
+                <div class="hero-actions">
+                    <button class="btn-action-primary" onclick="showTabByButton('servidores', 'nav-servidores')">Ver experiencia</button>
+                    <button class="btn-action-secondary" onclick="showTabByButton('contacto', 'nav-contacto')">Contactarme</button>
+                </div>
+            </div>
+
+            <!-- Sección de Estadísticas sin cuadro -->
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Proyectos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10h</div>
+                    <div class="stat-label">Disponible en Discord</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Enfocado en la comunidad</div>
+                </div>
+            </div>
+
+            <!-- Ficha de Perfil Minecraft -->
             <div class="profile-card">
                 <img class="profile-avatar" src="https://mc-heads.net/avatar/zRyker/100" alt="zRyker Avatar">
                 <div class="profile-username">zRyker</div>
@@ -301,71 +463,42 @@
                 </div>
             </div>
 
+            <!-- Información detallada con raya azul en TODO el texto -->
             <h2>zRyker</h2>
-            <p>Soy Developer y Staff de servidores de Minecraft. Llevo 4 años en esto y he gestionado 15 servidores.</p>
-            <p>Me gusta ayudar a los jugadores, arreglar lo que se rompe y que el servidor funcione bien. Mi nombre real es Juan Esteban.</p>
-            <p>He trabajado en moderación, plugins, configuración de servidores y revisiones SS, y he ayudado con problemas normales y graves.</p>
+            <div class="highlight-block">
+                <p>Soy Developer y Staff de servidores de Minecraft. Llevo 4 años en esto y he gestionado 15 servidores.</p>
+                <p>Me gusta ayudar a los jugadores, arreglar lo que se rompe y que el servidor funcione bien. Mi nombre real es Juan Esteban.</p>
+                <p>He trabajado en moderación, plugins, configuración de servidores y revisiones SS, y he ayudado con problemas normales y graves.</p>
+            </div>
         </section>
 
-        <!-- Opción: SOBRE MÍ -->
-        <section id="sobre-mi" class="tab-content">
-            <h2>Sobre mí</h2>
-            <p>Soy Juan Esteban y tengo 13 años, en los servidores me conocen como RykerGamer o zRyker. He sido staff en varios servidores y tengo 4 años de experiencia, tanto en moderación como en configuración de plugins.</p>
-            <p>Me gusta ayudar, ya sea como staff o como developer, mi recorrido me dio mucha experiencia ayudando con problemas normales y graves, y eso me ha servido para trabajar con calma cuando algo se complica.</p>
-
-            <ul>
-                <li>
-                    <strong>Staff y Developer</strong>
-                    Ayudo desde los dos lados: la moderación del día a día y la parte técnica de plugins y configuración.
-                </li>
-                <li>
-                    <strong>Soporte a los usuarios</strong>
-                    Resuelvo dudas y reportes de los jugadores.
-                </li>
-                <li>
-                    <strong>Bugs</strong>
-                    Arreglo bugs dentro de los servidores.
-                </li>
-                <li>
-                    <strong>Problemas entre jugadores</strong>
-                    Manejo conflictos, incluído los que tienen que ver con hacks.
-                </li>
-                <li>
-                    <strong>Trabajo en equipo</strong>
-                    Soy parte de un staff team y sé trabajar con el resto del equipo.
-                </li>
-            </ul>
-
-            <p style="margin-top: 15px; font-weight: 500;">Soy un staff responsable, amable y justo, tanto en problemas graves como en los que no lo son tanto.</p>
-        </section>
-
-        <!-- Opción: SERVIDORES -->
+        <!-- Opción: SERVIDORES / EXPERIENCIA -->
         <section id="servidores" class="tab-content">
-            <h2>Servidores</h2>
-            <p>He gestionado 15 servidores en total y en ellos he trabajado como staff. Estos son tres de los que más puedo mencionar:</p>
+            <h2>Experiencia</h2>
+            <p>He gestionado 15 servidores en total y en ellos he trabajado como staff. Estos son algunos de los que puedo mencionar:</p>
 
             <!-- SylenMC -->
             <div class="server-card">
-                <div class="server-header">
-                    <span class="server-name">SylenMC</span>
-                    <span class="server-role">Founder</span>
-                </div>
+                <span class="server-name">SylenMC</span>
+                <span class="server-role">Founder</span>
             </div>
 
             <!-- SurCraft -->
             <div class="server-card">
-                <div class="server-header">
-                    <span class="server-name">SurCraft</span>
-                    <span class="server-role">Admin</span>
-                </div>
+                <span class="server-name">SurCraft</span>
+                <span class="server-role">Admin</span>
             </div>
 
             <!-- Veltrix SMP -->
             <div class="server-card">
-                <div class="server-header">
-                    <span class="server-name">Veltrix SMP</span>
-                    <span class="server-role">Manager</span>
-                </div>
+                <span class="server-name">Veltrix SMP</span>
+                <span class="server-role">Manager</span>
+            </div>
+
+            <!-- GalaxyMC -->
+            <div class="server-card">
+                <span class="server-name">GalaxyMC</span>
+                <span class="server-role">Manager</span>
             </div>
 
             <p style="margin-top: 20px;">En todos he ayudado con moderación, dudas y reportes de los usuarios, bugs y problemas entre jugadores.</p>
@@ -442,7 +575,15 @@
             buttons.forEach(button => button.classList.remove('active'));
 
             document.getElementById(tabId).classList.add('active');
-            element.classList.add('active');
+            if (element) {
+                element.classList.add('active');
+            }
+        }
+
+        function showTabByButton(tabId, navBtnId) {
+            const targetBtn = document.getElementById(navBtnId);
+            showTab(tabId, targetBtn);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function copyText(text, buttonElement) {
@@ -462,5 +603,5 @@
     </script>
 
 </body>
-    </html>
-    
+                                                                        </html>
+                                                                        
